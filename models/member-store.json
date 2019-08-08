@@ -1,0 +1,37 @@
+{
+  "members": [
+    {
+      "firstName": "homer",
+      "lastName": "simpson",
+      "email": "homer@simpson.com",
+      "password": "secret",
+      "address": "Simpson Row",
+      "height": "1.85",
+      "startweight": "100",
+      "gender": "male",
+      "id": "3ad52697-6d98-4d80-8273-084de55a86c0"
+    },
+    {
+      "firstName": "Lisa",
+      "lastName": "Simpson",
+      "email": "lisa@simpson.com",
+      "password": "secret",
+      "address": "Simpson Row",
+      "height": "1.8",
+      "startweight": "80",
+      "gender": "female",
+      "id": "de18901e-b90f-40d7-ad12-6b265ed7b34e"
+    },
+    {
+      "firstName": "bart",
+      "lastName": "simpson",
+      "email": "bart@simpson.com",
+      "password": "secret",
+      "address": "simpson row",
+      "gender": "male",
+      "height": "5.6",
+      "startweight": "99",
+      "id": "7de5076d-3896-440f-8884-b0d182ba7f0c"
+    }
+  ]
+}

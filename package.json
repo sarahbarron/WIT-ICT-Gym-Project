@@ -1,0 +1,33 @@
+{
+  "name": "GymApp",
+  "version": "0.0.1",
+  "description": "ICT final project Gym App",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.4",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.1.4",
+    "express-handlebars": "^3.1.0",
+    "fs-extra": "^8.0.1",
+    "lodash": "^4.17.11",
+    "lowdb": "^1.0.0",
+    "uuid": "^3.3.2",
+    "winston": "^3.2.1"
+  },
+  "engines": {
+    "node": "8.x"
+  },
+  "repository": {
+    "url": "https://github.com/sarahbarron/wit-ict-gym-project.git"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch",
+    "express"
+  ]
+}
