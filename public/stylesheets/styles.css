@@ -1,0 +1,9 @@
+/* Set the font size for the BMI value in the utility partial*/
+.bmi {
+    font-size: 3em;
+}
+
+/* Set the paragraph text*/
+p {
+    font-size: 1.2em;
+}

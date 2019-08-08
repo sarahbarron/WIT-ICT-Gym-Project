@@ -6,12 +6,6 @@ const logger = require("../utils/logger");
 const uuid = require("uuid");
 
 const accounts = {
-  index(request, response) {
-    const viewData = {
-      title: "Login or Signup"
-    };
-    response.render("index", viewData);
-  },
 
   login(request, response) {
     const viewData = {
@@ -44,18 +38,16 @@ const accounts = {
   authenticate(request, response) {
     const member = memberStore.getMemberByEmail(request.body.email);
     const trainer = trainerStore.getTrainerByEmail(request.body.email);
-    
+
     if (member) {
       response.cookie("member", member.email);
       logger.info(`logging in ${member.email}`);
       response.redirect("/dashboard");
-    }
-    else if (trainer) {
+    } else if (trainer) {
       response.cookie("trainer", trainer.email);
       logger.info(`logging in ${trainer.email}`);
       response.redirect("/dashboard");
-    }
-    else {
+    } else {
       response.redirect("/login");
     }
   },
