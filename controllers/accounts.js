@@ -42,11 +42,11 @@ const accounts = {
     if (member) {
       response.cookie("member", member.email);
       logger.info(`logging in ${member.email}`);
-      response.redirect("/dashboard");
+      response.redirect("/dashboard", signedIn);
     } else if (trainer) {
       response.cookie("trainer", trainer.email);
       logger.info(`logging in ${trainer.email}`);
-      response.redirect("/dashboard");
+      response.redirect("/dashboard", signedIn);
     } else {
       response.redirect("/login");
     }
