@@ -38,16 +38,32 @@ const accounts = {
   authenticate(request, response) {
     const member = memberStore.getMemberByEmail(request.body.email);
     const trainer = trainerStore.getTrainerByEmail(request.body.email);
+    const passwordAttempt = request.body.password;
 
-    if (member) {
-      response.cookie("member", member.email);
-      logger.info(`logging in ${member.email}`);
-      response.redirect("/dashboard", signedIn);
-    } else if (trainer) {
-      response.cookie("trainer", trainer.email);
-      logger.info(`logging in ${trainer.email}`);
-      response.redirect("/dashboard", signedIn);
-    } else {
+    //  if the email address is belonging to a member or a trainer 
+    //  check that the password entered matches the password stored for the user.
+    if (member || trainer) {
+      if (member) {
+        let memberPassword = member.password;
+        console.log(memberPassword + passwordAttempt);
+        if (memberPassword === passwordAttempt) {
+          response.cookie("member", member.email);
+          logger.info(`logging in ${member.email}`);
+          response.redirect("/dashboard");
+        }
+      } else if (trainer) {
+        let trainerPassword = trainer.password;
+        if (trainerPassword === passwordAttempt) {
+          response.cookie("trainer", trainer.email);
+          logger.info(`logging in ${trainer.email}`);
+          response.redirect("/dashboard");
+        }
+      }
+      // if the passwords do not match return to the login page
+      response.redirect("/login");
+    }
+    //  if the person trying to login email address is not stored return to the login page
+    else {
       response.redirect("/login");
     }
   },
