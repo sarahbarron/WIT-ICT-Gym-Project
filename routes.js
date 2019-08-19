@@ -23,7 +23,7 @@ router.post("/addassessment", assessment.addAssessment);
 
 router.get("/profile", accounts.profile);
 // router.post("/update-trainer-profile", accounts.updateTrainerProfile);
-// router.post("/update-members-profile", accounts.updateMemberProfile);
+router.post("/update-members-profile", accounts.updateMemberProfile);
 router.get("/about", about.index);
 
 module.exports = router;

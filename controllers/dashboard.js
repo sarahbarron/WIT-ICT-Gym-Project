@@ -31,7 +31,6 @@ const dashboard = {
       bmiCategory: bmiCategory,
       bmiCategoryColor: bmiCategoryColor
     };
-    logger.info("about to render", assessmentStore.getAllAssessments());
     response.render("dashboard", viewData);
   },
 };

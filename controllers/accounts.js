@@ -5,6 +5,7 @@ const trainerStore = require("../models/trainer-store");
 const logger = require("../utils/logger");
 const uuid = require("uuid");
 
+
 const accounts = {
 
   login(request, response) {
@@ -25,14 +26,6 @@ const accounts = {
       title: "Login to the Service"
     };
     response.render("signup", viewData);
-  },
-
-  register(request, response) {
-    const member = request.body;
-    member.id = uuid();
-    memberStore.addMember(member);
-    logger.info(`registering ${member.email}`);
-    response.redirect("/");
   },
 
   authenticate(request, response) {
@@ -76,6 +69,7 @@ const accounts = {
     return memberStore.getMemberByEmail(memberEmail);
   },
 
+
   profile(request, response) {
     const memberEmail = request.cookies.member;
     const member = memberStore.getMemberByEmail(memberEmail);
@@ -90,7 +84,26 @@ const accounts = {
       male: male
     }
     response.render("profile", viewData);
-  }
+  },
+
+  register(request, response) {
+    const member = request.body;
+    member.id = uuid();
+    memberStore.addMember(member);
+    logger.info(`registering ${member.email}`);
+    response.redirect("/");
+  },
+  updateMemberProfile(request, response) {
+    logger.info(`update member request.body: ${request.body.firstName}`);
+    const newMemberDetails = request.body;
+    const memberEmail = request.cookies.member;
+    const member = memberStore.getMemberByEmail(memberEmail);
+    memberStore.updateMember(newMemberDetails, member);
+    response.cookie("member", member.email);
+    logger.info("Updating Member Details");
+    response.redirect("/dashboard");
+  },
+
 };
 
 module.exports = accounts;
