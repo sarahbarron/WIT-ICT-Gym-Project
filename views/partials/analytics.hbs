@@ -1,0 +1,51 @@
+<div class="ui 16 column middle aligned grid raised segment ">
+    <div class="row">
+        <div class="column four wide center aligned">
+            <i class="huge user icon"></i>
+        </div>
+        <div class="column four wide center aligned">
+            {{!-- #{if _idealWeight} --}}
+            <i class="huge tachometer green alternate icon"></i>
+            {{!-- #{/if}
+        #{else}
+            <i class="huge tachometer red alternate icon"></i>
+        #{/else} --}}
+        </div>
+        <div class="column two wide right aligned">
+            <i class="huge heartbeat icon"></i>
+        </div>
+        <div class="column two wide left aligned">
+            <h3 class="bmi">{{bmi}}</h3>
+        </div>
+        {{!-- <div class="column four wide center aligned">
+        #{if _bmiCategory.equals("SEVERELY UNDERWEIGHT") ||
+        _bmiCategory.equals("SEVERELY OBESE")} --}}
+        <i class="huge red user md icon"></i>
+        {{!-- #{/if}
+        #{elseif _bmiCategory.equals("UNDERWEIGHT") ||
+        _bmiCategory.equals("MODERATELY OBESE")}
+            <i class="huge orange user md icon"></i>
+        #{/elseif}
+        #{elseif _bmiCategory.equals("OVERWEIGHT")}
+            <i class="huge yellow user md icon"></i>
+        #{/elseif}
+        #{else}
+            <i class="huge green user md icon"></i>
+        #{/else} --}}
+    </div>
+    <div class="row">
+        <div class="column four wide center aligned">
+            <h3 class="ui header">{{firstName}} {{lastName}}</h3>
+        </div>
+        <div class="column four wide center aligned">
+            <h3 class="ui header">IDEAL WEIGHT INDICATOR</h3>
+        </div>
+        <div class="column two wide right aligned"></div>
+        <div class="column two wide left aligned">
+            <h3 class="ui header">BMI</h3>
+        </div>
+        <div class="column four wide center aligned">
+            {{!-- <h3 class="ui header">{{bmi}}</h3> --}}
+        </div>
+    </div>
+</div>

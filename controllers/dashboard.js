@@ -3,6 +3,7 @@
 const accounts = require("./accounts.js");
 const logger = require("../utils/logger");
 const assessmentStore = require("../models/assessment-store");
+const gymUtility = require("../models/gymUtilityCalculations");
 
 
 const dashboard = {
@@ -11,9 +12,14 @@ const dashboard = {
 
     logger.info("dashboard rendering");
     const loggedInMember = accounts.getCurrentMember(request);
+    const latestAssessment = assessmentStore.getLatestAssessment(loggedInMember.id);
+
     const viewData = {
       title: "Member Dashboard",
-      assessments: assessmentStore.getMemberAssessments(loggedInMember.id)
+      firstName: loggedInMember.firstName.toUpperCase(),
+      lastName: loggedInMember.lastName.toUpperCase(),
+      assessments: assessmentStore.getMemberAssessments(loggedInMember.id),
+      bmi: gymUtility.calculateBMI(loggedInMember, latestAssessment)
     };
     logger.info("about to render", assessmentStore.getAllAssessments());
     response.render("dashboard", viewData);

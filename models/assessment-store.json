@@ -3,7 +3,7 @@
     {
       "id": "fb8d1b1d-b1e2-45ba-877f-d19f8aee368e",
       "memberid": "3ad52697-6d98-4d80-8273-084de55a86c0",
-      "date": "8/19/2019, 12:51:26 PM",
+      "date": "8/19/2018, 12:51:26 PM",
       "weight": "100",
       "chest": "100",
       "thigh": "100",
@@ -21,6 +21,17 @@
       "upperarm": "90",
       "waist": "90",
       "hip": "90"
+    },
+    {
+      "id": "abc-b1e2-45ba-877f-d19f8aee368e",
+      "memberid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "date": "8/19/2015, 12:51:26 PM",
+      "weight": "100",
+      "chest": "100",
+      "thigh": "100",
+      "upperarm": "100",
+      "waist": "100",
+      "hip": "100"
     }
   ]
 }
