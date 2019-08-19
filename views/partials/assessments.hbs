@@ -1,0 +1,40 @@
+<div class="ui raised segment">
+    <table class="ui fixed table">
+        <thead>
+            <tr>
+                <th colspan="2">Date</th>
+                <th>Weight</th>
+                <th>Chest</th>
+                <th>Thigh</th>
+                <th>Upper Arm</th>
+                <th>Waist</th>
+                <th>Hips</th>
+                <th>Trend</th>
+                <th colspan="2">Comment</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <div class="ui bulleted list">
+                {{#each assessments}}
+                    <tr>
+                        <td colspan="2"> {{date}} </td>
+                        <td> {{weight}} </td>
+                        <td> {{chest}} </td>
+                        <td> {{upperarm}} </td>
+                        <td> {{waist}} </td>
+                        <td> {{hips}} </td>
+                        <td>
+                            trend
+                        </td>
+                        <td colspan="2">comment</td>
+                        <td>
+                            <a href="/delete/assessment/{{id}}" class="ui icon button">
+                                <i class="icon trash"></i>
+                            </a>
+                        </td>
+                {{/each}}
+            </div>
+        </tbody>
+    </table>
+</div>

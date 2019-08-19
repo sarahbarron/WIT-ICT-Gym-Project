@@ -1,0 +1,26 @@
+{
+  "assessmentCollection": [
+    {
+      "id": "fb8d1b1d-b1e2-45ba-877f-d19f8aee368e",
+      "memberid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "date": "8/19/2019, 12:51:26 PM",
+      "weight": "100",
+      "chest": "100",
+      "thigh": "100",
+      "upperarm": "100",
+      "waist": "100",
+      "hip": "100"
+    },
+    {
+      "id": "3661786e-ff3f-42c0-9c0e-58a3575b6b2a",
+      "memberid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "date": "8/19/2019, 12:52:13 PM",
+      "weight": "990",
+      "chest": "90",
+      "thigh": "90",
+      "upperarm": "90",
+      "waist": "90",
+      "hip": "90"
+    }
+  ]
+}

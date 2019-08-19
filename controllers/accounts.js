@@ -45,11 +45,13 @@ const accounts = {
     if (member || trainer) {
       if (member) {
         let memberPassword = member.password;
-        console.log(memberPassword + passwordAttempt);
         if (memberPassword === passwordAttempt) {
           response.cookie("member", member.email);
           logger.info(`logging in ${member.email}`);
           response.redirect("/dashboard");
+        } else {
+          // if the passwords do not match return to the login page
+          response.redirect("/login");
         }
       } else if (trainer) {
         let trainerPassword = trainer.password;
@@ -57,10 +59,11 @@ const accounts = {
           response.cookie("trainer", trainer.email);
           logger.info(`logging in ${trainer.email}`);
           response.redirect("/dashboard");
+        } else {
+          // if the passwords do not match return to the login page
+          response.redirect("/login");
         }
       }
-      // if the passwords do not match return to the login page
-      response.redirect("/login");
     }
     //  if the person trying to login email address is not stored return to the login page
     else {
