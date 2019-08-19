@@ -74,6 +74,22 @@ const accounts = {
   getCurrentMember(request) {
     const memberEmail = request.cookies.member;
     return memberStore.getMemberByEmail(memberEmail);
+  },
+
+  profile(request, response) {
+    const memberEmail = request.cookies.member;
+    const member = memberStore.getMemberByEmail(memberEmail);
+    let male = true;
+    if (member.gender == 'male') {
+      male = true;
+    } else {
+      male = false;
+    }
+    const viewData = {
+      member: member,
+      male: male
+    }
+    response.render("profile", viewData);
   }
 };
 

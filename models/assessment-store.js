@@ -1,8 +1,9 @@
 "use strict";
 
 const _ = require("lodash");
+const memberStore = require("../models/member-store");
 const JsonStore = require("./json-store");
-
+const accounts = require("../controllers/accounts")
 const assessmentStore = {
 
     store: new JsonStore("./models/assessment-store.json", {
@@ -35,13 +36,24 @@ const assessmentStore = {
         });
     },
 
-    getLatestAssessment(memberid) {
+    getLatestAssessment(email) {
         const assessments = this.store.findBy(this.collection, {
-            memberid: memberid
+            email: email
         }).sort(function (a, b) {
             return new Date(b.date) - new Date(a.date);
         });
-        return assessments[0];
+        if (assessments.length > 0) {
+            return assessments[0];
+        } else {
+            const member = memberStore.getMemberByEmail(email);
+            const weight = member.startweight;
+            const height = member.height;
+            const weightAndHeight = {
+                weight: weight,
+                height: height
+            };
+            return weightAndHeight;
+        }
     },
 
     // add an assessment

@@ -20,6 +20,10 @@ router.post("/authenticate", accounts.authenticate);
 router.get("/dashboard", dashboard.memberDashboard);
 router.get("/delete/assessment/:id", assessment.deleteAssessment);
 router.post("/addassessment", assessment.addAssessment);
+
+router.get("/profile", accounts.profile);
+// router.post("/update-trainer-profile", accounts.updateTrainerProfile);
+// router.post("/update-members-profile", accounts.updateMemberProfile);
 router.get("/about", about.index);
 
 module.exports = router;

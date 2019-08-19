@@ -4,12 +4,11 @@
             <i class="huge user icon"></i>
         </div>
         <div class="column four wide center aligned">
-            {{!-- #{if _idealWeight} --}}
-            <i class="huge tachometer green alternate icon"></i>
-            {{!-- #{/if}
-        #{else}
-            <i class="huge tachometer red alternate icon"></i>
-        #{/else} --}}
+            {{#if bmiCategoryColor}}
+                <i class="huge green tachometer alternate icon"></i>
+            {{else}}
+                <i class="huge red tachometer alternate icon"></i>
+            {{/if}}
         </div>
         <div class="column two wide right aligned">
             <i class="huge heartbeat icon"></i>
@@ -17,21 +16,13 @@
         <div class="column two wide left aligned">
             <h3 class="bmi">{{bmi}}</h3>
         </div>
-        {{!-- <div class="column four wide center aligned">
-        #{if _bmiCategory.equals("SEVERELY UNDERWEIGHT") ||
-        _bmiCategory.equals("SEVERELY OBESE")} --}}
-        <i class="huge red user md icon"></i>
-        {{!-- #{/if}
-        #{elseif _bmiCategory.equals("UNDERWEIGHT") ||
-        _bmiCategory.equals("MODERATELY OBESE")}
-            <i class="huge orange user md icon"></i>
-        #{/elseif}
-        #{elseif _bmiCategory.equals("OVERWEIGHT")}
-            <i class="huge yellow user md icon"></i>
-        #{/elseif}
-        #{else}
-            <i class="huge green user md icon"></i>
-        #{/else} --}}
+        <div class="column four wide center aligned">
+            {{#if bmiCategoryColor}}
+                <i class="huge green user md icon"></i>
+            {{else}}
+                <i class="huge red user md icon"></i>
+            {{/if}}
+        </div>
     </div>
     <div class="row">
         <div class="column four wide center aligned">
@@ -45,7 +36,7 @@
             <h3 class="ui header">BMI</h3>
         </div>
         <div class="column four wide center aligned">
-            {{!-- <h3 class="ui header">{{bmi}}</h3> --}}
+            <h3 class="ui header">{{bmiCategory}}</h3>
         </div>
     </div>
 </div>
