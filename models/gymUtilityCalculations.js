@@ -5,8 +5,8 @@ const logger = require("../utils/logger");
 const gymUtilityCalculations = {
 
     calculateBMI(member, assessment) {
-        const weight = assessment.weight;
-        const height = member.height;
+        const weight = parseFloat(assessment.weight);
+        const height = parseFloat(member.height);
         const squareOfHeight = Math.pow(height, 2);
         const bmi = ((weight / squareOfHeight) * 100) / 100;
         //https://www.w3schools.com/jsref/jsref_tofixed.asp
@@ -32,8 +32,8 @@ const gymUtilityCalculations = {
 
     isIdealBodyWeight(member, assessment) {
         const gender = member.gender;
-        const weight = assessment.weight;
-        const height = member.height;
+        const weight = parseFloat(assessment.weight);
+        const height = parseFloat(member.height);
         const heightInInches = height * 39.370;
         const fiveFoot = 60;
         const inchesAboveFiveFoot = heightInInches - fiveFoot;
@@ -46,8 +46,6 @@ const gymUtilityCalculations = {
             } else {
                 idealWeight = 45.5 + weightForEachInchOverFiveFoot
             }
-            logger.info(`ideal body weight ${idealWeight} v weight ${weight}`);
-
             if (weight >= idealWeight - 2 && weight <= idealWeight + 2) {
                 return true;
             } else {

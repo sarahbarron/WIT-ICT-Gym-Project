@@ -4,20 +4,20 @@ const accounts = require("./accounts.js");
 const logger = require("../utils/logger");
 const assessmentStore = require("../models/assessment-store");
 const gymUtility = require("../models/gymUtilityCalculations");
+const memberStore = require("../models/member-store");
 
 
 const dashboard = {
 
   memberDashboard(request, response) {
 
-    logger.info("dashboard rendering");
+    logger.info("member dashboard rendering");
     const loggedInMember = accounts.getCurrentMember(request);
     let latestAssessment = assessmentStore.getLatestAssessment(loggedInMember.email);
     assessmentStore.resetTrends(latestAssessment);
     const firstName = loggedInMember.firstName.toUpperCase();
     const lastName = loggedInMember.lastName.toUpperCase();
     const assessments = assessmentStore.getMemberAssessments(loggedInMember.id);
-
     const bmi = gymUtility.calculateBMI(loggedInMember, latestAssessment);
     const bmiCategory = gymUtility.determineBMICategory(bmi);
     let bmiCategoryColor = false;
@@ -25,8 +25,6 @@ const dashboard = {
       bmiCategoryColor = true;
     }
     const isIdealBodyWeight = gymUtility.isIdealBodyWeight(loggedInMember, latestAssessment);
-    logger.info(`(member: ${loggedInMember.firstName}) ( latest assessment  ${latestAssessment.weight}) 
-    (bmi: ${bmi}) (bmi category: ${bmiCategory}) (bmi color: ${bmiCategoryColor}) (is ideal weight: ${isIdealBodyWeight})`);
     const viewData = {
       title: "Member Dashboard",
       firstName: firstName,
@@ -37,8 +35,18 @@ const dashboard = {
       bmiCategoryColor: bmiCategoryColor,
       isIdealBodyWeight: isIdealBodyWeight
     };
-    response.render("dashboard", viewData);
+    response.render("memberdashboard", viewData);
   },
+
+  trainerDashboard(request, response) {
+    const trainer = accounts.getCurrentTrainer(request);
+    const members = memberStore.getTrainersMembers(trainer.id);
+    const viewData = {
+      members: members,
+      trainer: trainer
+    };
+    response.render("trainerdashboard", viewData);
+  }
 };
 
 module.exports = dashboard;

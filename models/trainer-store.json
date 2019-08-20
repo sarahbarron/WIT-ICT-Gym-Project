@@ -1,11 +1,9 @@
 {
-  "trainers": [
-    {
-      "firstName": "marge",
-      "lastName": "simpson",
-      "email": "marge@simpson.com",
-      "password": "secret",
-      "id": "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
-    }
-  ]
+  "trainers": [{
+    "id": "123456789",
+    "firstName": "marge",
+    "lastName": "simpson",
+    "email": "marge@simpson.com",
+    "password": "secret"
+  }]
 }

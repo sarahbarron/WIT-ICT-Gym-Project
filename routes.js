@@ -17,10 +17,11 @@ router.get("/logout", accounts.logout);
 router.post("/register", accounts.register);
 router.post("/authenticate", accounts.authenticate);
 
-router.get("/dashboard", dashboard.memberDashboard);
+router.get("/member-dashboard", dashboard.memberDashboard);
 router.get("/delete/assessment/:id", assessment.deleteAssessment);
 router.post("/addassessment", assessment.addAssessment);
 
+router.get("/trainer-dashboard", dashboard.trainerDashboard);
 router.get("/profile", accounts.profile);
 // router.post("/update-trainer-profile", accounts.updateTrainerProfile);
 router.post("/update-members-profile", accounts.updateMemberProfile);

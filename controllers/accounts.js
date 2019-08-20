@@ -28,6 +28,17 @@ const accounts = {
     response.render("signup", viewData);
   },
 
+  register(request, response) {
+    const member = request.body;
+    member.id = uuid();
+    member.trainerid = "123456789";
+    member.numberOfAssessments = 0;
+    memberStore.addMember(member);
+    logger.info(`registering ${member.email}`);
+    response.cookie("member", member.email);
+    response.redirect("/member-dashboard");
+  },
+
   authenticate(request, response) {
     const member = memberStore.getMemberByEmail(request.body.email);
     const trainer = trainerStore.getTrainerByEmail(request.body.email);
@@ -41,7 +52,7 @@ const accounts = {
         if (memberPassword === passwordAttempt) {
           response.cookie("member", member.email);
           logger.info(`logging in ${member.email}`);
-          response.redirect("/dashboard");
+          response.redirect("/member-dashboard");
         } else {
           // if the passwords do not match return to the login page
           response.redirect("/login");
@@ -51,7 +62,7 @@ const accounts = {
         if (trainerPassword === passwordAttempt) {
           response.cookie("trainer", trainer.email);
           logger.info(`logging in ${trainer.email}`);
-          response.redirect("/dashboard");
+          response.redirect("/trainer-dashboard");
         } else {
           // if the passwords do not match return to the login page
           response.redirect("/login");
@@ -67,6 +78,11 @@ const accounts = {
   getCurrentMember(request) {
     const memberEmail = request.cookies.member;
     return memberStore.getMemberByEmail(memberEmail);
+  },
+
+  getCurrentTrainer(request) {
+    const trainerEmail = request.cookies.trainer;
+    return trainerStore.getTrainerByEmail(trainerEmail);
   },
 
   profile(request, response) {
@@ -85,13 +101,6 @@ const accounts = {
     response.render("profile", viewData);
   },
 
-  register(request, response) {
-    const member = request.body;
-    member.id = uuid();
-    memberStore.addMember(member);
-    logger.info(`registering ${member.email}`);
-    response.redirect("/");
-  },
   updateMemberProfile(request, response) {
     logger.info(`update member request.body: ${request.body.firstName}`);
     const newMemberDetails = request.body;
@@ -100,8 +109,8 @@ const accounts = {
     memberStore.updateMember(newMemberDetails, member);
     response.cookie("member", member.email);
     logger.info("Updating Member Details");
-    response.redirect("/dashboard");
-  },
+    response.redirect("/member-dashboard");
+  }
 
 };
 

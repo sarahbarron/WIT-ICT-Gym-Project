@@ -11,7 +11,7 @@ const assessment = {
         const assessmentId = request.params.id;
         logger.info("deleting assessment: ", assessmentId);
         assessmentStore.removeAssessment(assessmentId);
-        response.redirect("/dashboard");
+        response.redirect("/member-dashboard");
     },
 
     addAssessment(request, response) {
@@ -30,7 +30,7 @@ const assessment = {
 
         logger.debug("New Assessment = ", newAssessment);
         assessmentStore.addAssessment(newAssessment);
-        response.redirect("/dashboard");
+        response.redirect("/member-dashboard");
     }
 };
 

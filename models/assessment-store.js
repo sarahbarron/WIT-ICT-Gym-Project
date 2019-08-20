@@ -62,6 +62,7 @@ const assessmentStore = {
         this.store.add(this.collection, assessment);
         this.store.save();
         this.resetTrends(assessment);
+        memberStore.addNumberOfAssessments(assessment);
     },
 
     removeAssessment(id) {
@@ -69,6 +70,7 @@ const assessmentStore = {
         this.store.remove(this.collection, assessment);
         this.store.save();
         this.resetTrends(assessment);
+        memberStore.subtractNumberOfAssessments(assessment);
     },
 
     resetTrends(assessment) {
@@ -87,25 +89,29 @@ const assessmentStore = {
 
         for (i = 0; i < assessments.length; i++) {
             thisAssessment = assessments[i];
-            assessmentWeight = thisAssessment.weight;
+            assessmentWeight = parseFloat(thisAssessment.weight);
 
             if (i === assessments.length - 1) {
-                previousWeight = member.startweight;
+                previousWeight = parseFloat(member.startweight);
             } else {
                 previousAssessment = assessments[i + 1];
-                previousWeight = previousAssessment.weight;
+                previousWeight = parseFloat(previousAssessment.weight);
             }
             weightDifference = assessmentWeight - previousWeight;
             bmi = gymUtility.calculateBMI(member, thisAssessment);
             bmiCategory = gymUtility.determineBMICategory(bmi);
 
-            if (weightDifference <= 0 && bmiCategory !== "UNDERWEIGHT") {
+            if (weightDifference <= 0 && !bmiCategory.includes("UNDERWEIGHT")) {
+                logger.info(`first: weight: ${member.weight} weight difference: ${weightDifference} bmi cat: ${bmiCategory}`);
                 thisAssessment.trend = true;
-            } else if (weightDifference > 0 && bmiCategory !== "UNDERWEIGHT") {
+            } else if (weightDifference > 0 && !bmiCategory.includes("UNDERWEIGHT")) {
+                logger.info(`second: weight: ${member.weight} weight difference: ${weightDifference} bmi cat: ${bmiCategory}`);
                 thisAssessment.trend = false;
-            } else if (weightDifference >= 0 && bmiCategory === "UNDERWEIGHT") {
+            } else if (weightDifference <= 0 && bmiCategory.includes("UNDERWEIGHT")) {
+                logger.info(`third: weight: ${member.weight} weight difference: ${weightDifference} bmi cat: ${bmiCategory}`);
                 thisAssessment.trend = false;
-            } else if (weightDifference > 0 && bmiCategory === "UNDERWEIGHT") {
+            } else if (weightDifference > 0 && bmiCategory.includes("UNDERWEIGHT")) {
+                logger.info(`forth: weight: ${member.weight} weight difference: ${weightDifference} bmi cat: ${bmiCategory}`);
                 thisAssessment.trend = true;
             }
             this.store.save();

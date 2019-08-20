@@ -4,7 +4,9 @@ const _ = require("lodash");
 const JsonStore = require("./json-store");
 
 const trainerStore = {
-  store: new JsonStore("./models/trainer-store.json", { trainers: [] }),
+  store: new JsonStore("./models/trainer-store.json", {
+    trainers: []
+  }),
   collection: "trainers",
 
   getAllTrainers() {
@@ -17,11 +19,15 @@ const trainerStore = {
   },
 
   getTrainerById(id) {
-    return this.store.findOneBy(this.collection, { id: id });
+    return this.store.findOneBy(this.collection, {
+      id: id
+    });
   },
 
   getTrainerByEmail(email) {
-    return this.store.findOneBy(this.collection, { email: email });
+    return this.store.findOneBy(this.collection, {
+      email: email
+    });
   }
 };
 

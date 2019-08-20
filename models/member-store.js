@@ -25,6 +25,19 @@ const memberStore = {
     });
   },
 
+  addNumberOfAssessments(assessment) {
+    const memberid = assessment.memberid;
+    const member = this.getMemberById(memberid);
+    member.numberOfAssessments = parseInt(member.numberOfAssessments) + parseInt(1);
+    this.store.save();
+  },
+  subtractNumberOfAssessments(assessment) {
+    const memberid = assessment.memberid;
+    const member = this.getMemberById(memberid);
+    member.numberOfAssessments = parseInt(member.numberOfAssessments) - parseInt(1);
+    this.store.save();
+  },
+
   getMemberByEmail(email) {
     return this.store.findOneBy(this.collection, {
       email: email
@@ -58,8 +71,13 @@ const memberStore = {
       member.startweight = newMemberDetails.startweight;
     }
     this.store.save();
-  }
+  },
 
+  getTrainersMembers(trainerid) {
+    return this.store.findBy(this.collection, {
+      trainerid: trainerid
+    });
+  }
 
 };
 
