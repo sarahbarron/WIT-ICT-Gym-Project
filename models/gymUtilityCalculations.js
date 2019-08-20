@@ -1,6 +1,6 @@
 "use strict";
 
-const JsonStore = require("./json-store");
+const logger = require("../utils/logger");
 
 const gymUtilityCalculations = {
 
@@ -27,6 +27,40 @@ const gymUtilityCalculations = {
             return "SEVERELY OBESE";
         } else {
             return "UNKNOWN";
+        }
+    },
+
+    isIdealBodyWeight(member, assessment) {
+        const gender = member.gender;
+        const weight = assessment.weight;
+        const height = member.height;
+        const heightInInches = height * 39.370;
+        const fiveFoot = 60;
+        const inchesAboveFiveFoot = heightInInches - fiveFoot;
+        const weightForEachInchOverFiveFoot = inchesAboveFiveFoot * 2.3;
+        let idealWeight;
+
+        if (heightInInches >= fiveFoot - 2.4) {
+            if (gender === "m") {
+                idealWeight = 50 + weightForEachInchOverFiveFoot;
+            } else {
+                idealWeight = 45.5 + weightForEachInchOverFiveFoot
+            }
+            logger.info(`ideal body weight ${idealWeight} v weight ${weight}`);
+
+            if (weight >= idealWeight - 2 && weight <= idealWeight + 2) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            if (gender === "m") {
+                if (weight <= 50 && weight >= 43.5) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
         }
     }
 };

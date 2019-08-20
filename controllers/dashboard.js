@@ -13,15 +13,20 @@ const dashboard = {
     logger.info("dashboard rendering");
     const loggedInMember = accounts.getCurrentMember(request);
     let latestAssessment = assessmentStore.getLatestAssessment(loggedInMember.email);
+    assessmentStore.resetTrends(latestAssessment);
     const firstName = loggedInMember.firstName.toUpperCase();
     const lastName = loggedInMember.lastName.toUpperCase();
     const assessments = assessmentStore.getMemberAssessments(loggedInMember.id);
+
     const bmi = gymUtility.calculateBMI(loggedInMember, latestAssessment);
     const bmiCategory = gymUtility.determineBMICategory(bmi);
     let bmiCategoryColor = false;
     if (bmiCategory === "NORMAL") {
       bmiCategoryColor = true;
     }
+    const isIdealBodyWeight = gymUtility.isIdealBodyWeight(loggedInMember, latestAssessment);
+    logger.info(`(member: ${loggedInMember.firstName}) ( latest assessment  ${latestAssessment.weight}) 
+    (bmi: ${bmi}) (bmi category: ${bmiCategory}) (bmi color: ${bmiCategoryColor}) (is ideal weight: ${isIdealBodyWeight})`);
     const viewData = {
       title: "Member Dashboard",
       firstName: firstName,
@@ -29,7 +34,8 @@ const dashboard = {
       assessments: assessments,
       bmi: bmi,
       bmiCategory: bmiCategory,
-      bmiCategoryColor: bmiCategoryColor
+      bmiCategoryColor: bmiCategoryColor,
+      isIdealBodyWeight: isIdealBodyWeight
     };
     response.render("dashboard", viewData);
   },

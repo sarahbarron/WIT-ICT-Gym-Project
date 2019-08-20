@@ -69,7 +69,6 @@ const accounts = {
     return memberStore.getMemberByEmail(memberEmail);
   },
 
-
   profile(request, response) {
     const memberEmail = request.cookies.member;
     const member = memberStore.getMemberByEmail(memberEmail);

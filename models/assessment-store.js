@@ -1,9 +1,10 @@
 "use strict";
 
 const _ = require("lodash");
+const logger = require("../utils/logger");
 const memberStore = require("../models/member-store");
 const JsonStore = require("./json-store");
-const accounts = require("../controllers/accounts")
+const gymUtility = require("./gymUtilityCalculations");
 const assessmentStore = {
 
     store: new JsonStore("./models/assessment-store.json", {
@@ -37,11 +38,11 @@ const assessmentStore = {
     },
 
     getLatestAssessment(email) {
-        const assessments = this.store.findBy(this.collection, {
-            email: email
-        }).sort(function (a, b) {
-            return new Date(b.date) - new Date(a.date);
-        });
+
+        const member = memberStore.getMemberByEmail(email);
+        const assessments = this.getMemberAssessments(member.id);
+
+        logger.info(`email: ${email}  number of assessments ${assessments.length}`);
         if (assessments.length > 0) {
             return assessments[0];
         } else {
@@ -60,12 +61,55 @@ const assessmentStore = {
     addAssessment(assessment) {
         this.store.add(this.collection, assessment);
         this.store.save();
+        this.resetTrends(assessment);
     },
 
     removeAssessment(id) {
         const assessment = this.getAssessment(id);
         this.store.remove(this.collection, assessment);
         this.store.save();
+        this.resetTrends(assessment);
+    },
+
+    resetTrends(assessment) {
+
+        let previousWeight;
+        let assessmentWeight;
+        let weightDifference;
+        let bmi;
+        let bmiCategory;
+        let thisAssessment;
+        let i = 0;
+        let previousAssessment;
+        const memberId = assessment.memberid;
+        const member = memberStore.getMemberById(memberId);
+        const assessments = this.getMemberAssessments(memberId);
+
+        for (i = 0; i < assessments.length; i++) {
+            thisAssessment = assessments[i];
+            assessmentWeight = thisAssessment.weight;
+
+            if (i === assessments.length - 1) {
+                previousWeight = member.startweight;
+            } else {
+                previousAssessment = assessments[i + 1];
+                previousWeight = previousAssessment.weight;
+            }
+            weightDifference = assessmentWeight - previousWeight;
+            bmi = gymUtility.calculateBMI(member, thisAssessment);
+            bmiCategory = gymUtility.determineBMICategory(bmi);
+
+            if (weightDifference <= 0 && bmiCategory !== "UNDERWEIGHT") {
+                thisAssessment.trend = true;
+            } else if (weightDifference > 0 && bmiCategory !== "UNDERWEIGHT") {
+                thisAssessment.trend = false;
+            } else if (weightDifference >= 0 && bmiCategory === "UNDERWEIGHT") {
+                thisAssessment.trend = false;
+            } else if (weightDifference > 0 && bmiCategory === "UNDERWEIGHT") {
+                thisAssessment.trend = true;
+            }
+            this.store.save();
+        }
     }
 };
 

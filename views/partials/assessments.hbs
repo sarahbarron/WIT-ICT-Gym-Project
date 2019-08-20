@@ -26,7 +26,11 @@
                         <td> {{waist}} </td>
                         <td> {{hip}} </td>
                         <td>
-                            trend
+                            {{#if trend}}
+                                <i class="green ui tag label"></i>
+                            {{else}}
+                                <i class="red ui tag label"></i>
+                            {{/if}}
                         </td>
                         <td colspan="2">comment</td>
                         <td>
