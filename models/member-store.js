@@ -34,7 +34,9 @@ const memberStore = {
   subtractNumberOfAssessments(assessment) {
     const memberid = assessment.memberid;
     const member = this.getMemberById(memberid);
-    member.numberOfAssessments = parseInt(member.numberOfAssessments) - parseInt(1);
+    if (member.numberOfAssessments > 0) {
+      member.numberOfAssessments = parseInt(member.numberOfAssessments) - parseInt(1);
+    }
     this.store.save();
   },
 
@@ -70,6 +72,12 @@ const memberStore = {
     if (newMemberDetails.startweight !== "") {
       member.startweight = newMemberDetails.startweight;
     }
+    this.store.save();
+  },
+
+  deleteMember(id) {
+    const member = this.getMemberById(id);
+    this.store.remove(this.collection, member);
     this.store.save();
   }
 

@@ -1,27 +1,28 @@
 {
-  "members": [{
+  "members": [
+    {
       "firstName": "homer",
       "lastName": "simpson",
-      "password": "secret",
       "email": "homer@simpson.com",
+      "password": "secret",
       "address": "Simpson Row",
-      "height": 1.85,
-      "startweight": 100,
       "gender": "male",
-      "id": "3ad52697-6d98-4d80-8273-084de55a86c0",
-      "numberOfAssessments": 0
+      "height": "1.3",
+      "startweight": "60",
+      "id": "ef928222-1c14-45b4-bef5-f6f73140ff03",
+      "numberOfAssessments": 2
     },
     {
-      "firstName": "lisa",
-      "lastName": "simpson",
-      "password": "secret",
+      "firstName": "Lisa",
+      "lastName": "Simpson",
       "email": "lisa@simpson.com",
-      "address": "Simpson Row",
-      "height": "1.9",
-      "startweight": "81",
+      "password": "secret",
+      "address": "Simpson Ros",
       "gender": "female",
-      "id": "de18901e-b90f-40d7-ad12-6b265ed7b34e",
-      "numberOfAssessments": 5
+      "height": "1.2",
+      "startweight": "40",
+      "id": "8e5e6d25-cee7-42ae-b75d-3836359b7fae",
+      "numberOfAssessments": 2
     },
     {
       "firstName": "bart",
@@ -30,34 +31,10 @@
       "password": "secret",
       "address": "simpson row",
       "gender": "male",
-      "height": "5.6",
-      "startweight": "99",
-      "id": "7de5076d-3896-440f-8884-b0d182ba7f0c",
-      "numberOfAssessments": 0
-    },
-    {
-      "firstName": "maggie",
-      "lastName": "simpson",
-      "email": "maggie@simpson.com",
-      "password": "secret",
-      "address": "simpson row",
-      "gender": "female",
-      "height": "1.2",
-      "startweight": "40",
-      "id": "3209bae7-b255-48b3-9124-78e91c8825c6",
-      "numberOfAssessments": 0
-    },
-    {
-      "firstName": "molly",
-      "lastName": "simpson",
-      "email": "molly@simpson.com",
-      "password": "secret",
-      "address": "simpson row",
-      "gender": "female",
-      "height": "1.3",
-      "startweight": "43",
-      "id": "fcd6967e-a7b7-40a6-8c0c-88d6cdc4240b",
-      "numberOfAssessments": 0
+      "height": "1.5",
+      "startweight": "50",
+      "id": "5e1e13eb-d450-4e56-a834-8e8cf3f01b9f",
+      "numberOfAssessments": 2
     }
   ]
 }

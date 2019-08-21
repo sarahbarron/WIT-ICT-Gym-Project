@@ -18,15 +18,17 @@ router.post("/register", accounts.register);
 router.post("/authenticate", accounts.authenticate);
 
 router.get("/member-dashboard", dashboard.memberDashboard);
-router.get("/delete/assessment/:id", assessment.deleteAssessment);
-router.post("/addassessment", assessment.addAssessment);
+router.get("/delete-assessment/:id", assessment.deleteAssessment);
+router.post("/add-assessment", assessment.addAssessment);
 router.get("/member-profile", accounts.profile);
 router.post("/update-members-profile", accounts.updateMemberProfile);
 
 router.get("/trainer-dashboard", trainerDashboard.index);
 router.get("/member/:id", trainerDashboard.getMemberDetails);
 router.get("/trainer-profile", accounts.trainerProfile);
+router.get("/delete-member/:id", trainerDashboard.deleteMember);
 router.post("/update-trainers-profile", accounts.updateTrainerProfile);
+router.post("/member/:memberid/add-comment-assessment/:id", assessment.addComment);
 
 // router.post("/update-trainer-profile", accounts.updateTrainerProfile);
 

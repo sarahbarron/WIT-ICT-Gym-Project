@@ -94,6 +94,7 @@ const accounts = {
       male = false;
     }
     const viewData = {
+      title: "Profile",
       member: member,
       male: male
     }
@@ -110,6 +111,7 @@ const accounts = {
       male = false;
     }
     const viewData = {
+      title: "Profile",
       trainer: trainer,
       male: male
     }

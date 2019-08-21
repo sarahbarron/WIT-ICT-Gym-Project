@@ -27,10 +27,19 @@ const assessment = {
             waist: request.body.waist,
             hip: request.body.hip
         }
-
         logger.debug("New Assessment = ", newAssessment);
         assessmentStore.addAssessment(newAssessment);
         response.redirect("/member-dashboard");
+    },
+
+    addComment(request, response) {
+        logger.info("Adding a comment");
+        const id = request.params.memberid;
+        const assessmentid = request.params.id;
+        const comment = request.body.comment;
+        assessmentStore.addComment(assessmentid, comment);
+        // response.redirect("/trainer-dashboard");
+        response.redirect(`/member/${id}`);
     }
 };
 

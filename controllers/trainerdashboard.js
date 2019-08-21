@@ -14,6 +14,7 @@ const trainerdashboard = {
         const trainer = accounts.getCurrentTrainer(request);
         const members = memberStore.getAllMembers();
         const viewData = {
+            title: "Trainer Dashboard",
             members: members,
             trainer: trainer,
         };
@@ -38,6 +39,7 @@ const trainerdashboard = {
         const isIdealBodyWeight = gymUtility.isIdealBodyWeight(member, latestAssessment);
         const viewData = {
             title: "Trainer Dashboard",
+            member: member,
             firstName: firstName,
             lastName: lastName,
             assessments: assessments,
@@ -47,6 +49,12 @@ const trainerdashboard = {
             isIdealBodyWeight: isIdealBodyWeight,
         };
         response.render("trainerviewmember", viewData);
+    },
+
+    deleteMember(request, response) {
+        const memberid = request.params.id;
+        memberStore.deleteMember(memberid);
+        response.redirect("/trainer-dashboard");
     }
 
 

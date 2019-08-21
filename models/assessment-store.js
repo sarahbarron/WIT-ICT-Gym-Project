@@ -42,7 +42,6 @@ const assessmentStore = {
         const member = memberStore.getMemberByEmail(email);
         const assessments = this.getMemberAssessments(member.id);
 
-        logger.info(`email: ${email}  number of assessments ${assessments.length}`);
         if (assessments.length > 0) {
             return assessments[0];
         } else {
@@ -102,20 +101,22 @@ const assessmentStore = {
             bmiCategory = gymUtility.determineBMICategory(bmi);
 
             if (weightDifference <= 0 && !bmiCategory.includes("UNDERWEIGHT")) {
-                logger.info(`first: weight: ${member.weight} weight difference: ${weightDifference} bmi cat: ${bmiCategory}`);
                 thisAssessment.trend = true;
             } else if (weightDifference > 0 && !bmiCategory.includes("UNDERWEIGHT")) {
-                logger.info(`second: weight: ${member.weight} weight difference: ${weightDifference} bmi cat: ${bmiCategory}`);
                 thisAssessment.trend = false;
             } else if (weightDifference <= 0 && bmiCategory.includes("UNDERWEIGHT")) {
-                logger.info(`third: weight: ${member.weight} weight difference: ${weightDifference} bmi cat: ${bmiCategory}`);
                 thisAssessment.trend = false;
             } else if (weightDifference > 0 && bmiCategory.includes("UNDERWEIGHT")) {
-                logger.info(`forth: weight: ${member.weight} weight difference: ${weightDifference} bmi cat: ${bmiCategory}`);
                 thisAssessment.trend = true;
             }
             this.store.save();
         }
+    },
+
+    addComment(id, comment) {
+        const assessment = this.getAssessment(id);
+        assessment.comment = comment;
+        this.store.save();
     }
 };
 

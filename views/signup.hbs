@@ -4,20 +4,20 @@
   <div class="two fields">
     <div class="field">
       <label>First Name</label>
-      <input placeholder="First Name" type="text" name="firstName">
+      <input placeholder="First Name" type="text" name="firstName" required>
     </div>
     <div class="field">
       <label>Last Name</label>
-      <input placeholder="Last Name" type="text" name="lastName">
+      <input placeholder="Last Name" type="text" name="lastName" required>
     </div>
   </div>
   <div class="field">
     <label>Email</label>
-    <input placeholder="Email" type="text" name="email">
+    <input placeholder="Email" type="email" name="email" required>
   </div>
   <div class="field">
     <label>Password</label>
-    <input type="password" name="password">
+    <input type="password" name="password" required>
   </div>
   <div class="field">
     <label>Address</label>
@@ -31,11 +31,11 @@
   <div class="two fields">
     <div class="field">
       <label>Height</label>
-      <input type="number" step="0.01" min="0" name="height">
+      <input type="number" step="0.01" min="0" name="height" required>
     </div>
     <div class="field">
       <label>Starting Weight</label>
-      <input type="number" step="0.01" min="0" name="startweight">
+      <input type="number" step="0.01" min="0" name="startweight" required>
     </div>
     <button class="ui blue submit button">Submit</button>
 </form>

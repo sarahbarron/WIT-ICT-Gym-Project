@@ -35,7 +35,8 @@
                     </tr>
                     <tr>
                         <td colspan="10">
-                            <form class="ui raised segment form" action="/comment/{{id}}" method="POST">
+                            <form class="ui raised segment form"
+                                action="/member/{{../member.id}}/add-comment-assessment/{{id}}" method="POST">
                                 <div class="field">
                                     <label>Comments</label>
                                     <textarea rows="2" cols="50" name="comment"></textarea>
