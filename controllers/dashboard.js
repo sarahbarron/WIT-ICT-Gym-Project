@@ -36,17 +36,8 @@ const dashboard = {
       isIdealBodyWeight: isIdealBodyWeight
     };
     response.render("memberdashboard", viewData);
-  },
-
-  trainerDashboard(request, response) {
-    const trainer = accounts.getCurrentTrainer(request);
-    const members = memberStore.getTrainersMembers(trainer.id);
-    const viewData = {
-      members: members,
-      trainer: trainer
-    };
-    response.render("trainerdashboard", viewData);
   }
+
 };
 
 module.exports = dashboard;

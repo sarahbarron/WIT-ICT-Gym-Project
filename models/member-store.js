@@ -71,12 +71,6 @@ const memberStore = {
       member.startweight = newMemberDetails.startweight;
     }
     this.store.save();
-  },
-
-  getTrainersMembers(trainerid) {
-    return this.store.findBy(this.collection, {
-      trainerid: trainerid
-    });
   }
 
 };

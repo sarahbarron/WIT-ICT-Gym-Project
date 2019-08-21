@@ -1,29 +1,25 @@
-{{> menu id="profile"}}
+{{> trainermenu id="profile"}}
 <div class="ui two column grid basic middle aligned segment">
     <div class="column">
-        <form class="ui stacked segment form" action="/update-members-profile" method="POST">
+        <form class="ui stacked segment form" action="/update-trainers-profile" method="POST">
             <h3 class="ui header">Update Profile</h3>
             <div class="two fields">
                 <div class="field">
                     <label>First Name</label>
-                    <input placeholder={{member.firstName}} type="text" name="firstName">
+                    <input placeholder={{trainer.firstName}} type="text" name="firstName">
                 </div>
                 <div class="field">
                     <label>Last Name</label>
-                    <input placeholder={{member.lastName}} type="text" name="lastName">
+                    <input placeholder={{trainer.lastName}} type="text" name="lastName">
                 </div>
             </div>
             <div class="field">
                 <label>Email</label>
-                <input placeholder={{member.email}} type="text" name="email">
+                <input placeholder={{trainer.email}} type="text" name="email">
             </div>
             <div class="field">
                 <label>Password</label>
                 <input placeholder="..........." type="password" name="password">
-            </div>
-            <div class="field">
-                <label>Address</label>
-                <input placeholder={{member.address}} type="text" name="address">
             </div>
             <div class="field">
                 <label>Gender</label>
@@ -34,16 +30,6 @@
                     <input type="radio" name="gender" value="male">Male
                     <input type="radio" name="gender" value="female" checked> Female
                 {{/if}}
-            </div>
-            <div class="two fields">
-                <div class="field">
-                    <label>Height</label>
-                    <input placeholder={{member.height}} type="number" step="0.01" min="0" name="height">
-                </div>
-                <div class="field">
-                    <label>Starting Weight</label>
-                    <input placeholder={{member.startweight}} type="number" step="0.01" min="0" name="startweight">
-                </div>
             </div>
             <button class="ui blue submit button">Submit</button>
         </form>

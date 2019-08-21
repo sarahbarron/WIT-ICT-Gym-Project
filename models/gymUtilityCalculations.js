@@ -4,6 +4,7 @@ const logger = require("../utils/logger");
 
 const gymUtilityCalculations = {
 
+
     calculateBMI(member, assessment) {
         const weight = parseFloat(assessment.weight);
         const height = parseFloat(member.height);

@@ -28,7 +28,27 @@ const trainerStore = {
     return this.store.findOneBy(this.collection, {
       email: email
     });
+  },
+
+  updateTrainer(newTrainerDetails, trainer) {
+
+    if (newTrainerDetails.firstName !== "") {
+      trainer.firstName = newTrainerDetails.firstName;
+    }
+    if (newTrainerDetails.lastName !== "") {
+      trainer.lastName = newTrainerDetails.lastName;
+    }
+    if (newTrainerDetails.email !== "") {
+      trainer.email = newTrainerDetails.email;
+    }
+    if (newTrainerDetails.password !== "") {
+      trainer.password = newTrainerDetails.password;
+    }
+    trainer.gender = newTrainerDetails.gender;
+
+    this.store.save();
   }
+
 };
 
 module.exports = trainerStore;

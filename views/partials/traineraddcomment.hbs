@@ -1,0 +1,51 @@
+<div class="ui raised segment">
+    {{#each assessments}}
+        <table class="ui fixed table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Weight</th>
+                    <th>Chest</th>
+                    <th>Thigh</th>
+                    <th>Upper Arm</th>
+                    <th>Waist</th>
+                    <th>Hips</th>
+                    <th>Trend</th>
+                    <th colspan="2">Comment</th>
+                </tr>
+            </thead>
+            <tbody>
+                <div class="ui bulleted list">
+                    <tr>
+                        <td> {{date}} </td>
+                        <td> {{weight}}</td>
+                        <td> {{chest}} </td>
+                        <td> {{thigh}} </td>
+                        <td> {{upperarm}}</td>
+                        <td> {{waist}} </td>
+                        <td> {{hip}} </td>
+                        <td>
+                            {{#if trend}}
+                                <i class="green ui tag label"></i>
+                            {{else}}
+                                <i class="red ui tag label"></i>
+                            {{/if}}
+                        </td>
+                        <td colspan="2">{{comment}}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="10">
+                            <form class="ui raised segment form" action="/comment/{{id}}" method="POST">
+                                <div class="field">
+                                    <label>Comments</label>
+                                    <textarea rows="2" cols="50" name="comment"></textarea>
+                                </div>
+                                <button class="ui blue submit button">Update</button>
+                            </form>
+                        </td>
+                    </tr>
+                </div>
+            </tbody>
+        </table>
+    {{/each}}
+</div>

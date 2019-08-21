@@ -4,6 +4,7 @@
     "firstName": "marge",
     "lastName": "simpson",
     "email": "marge@simpson.com",
-    "password": "secret"
+    "password": "secret",
+    "gender": "female"
   }]
 }

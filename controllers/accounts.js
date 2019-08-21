@@ -31,7 +31,6 @@ const accounts = {
   register(request, response) {
     const member = request.body;
     member.id = uuid();
-    member.trainerid = "123456789";
     member.numberOfAssessments = 0;
     memberStore.addMember(member);
     logger.info(`registering ${member.email}`);
@@ -101,17 +100,42 @@ const accounts = {
     response.render("profile", viewData);
   },
 
+  trainerProfile(request, response) {
+    const trainerEmail = request.cookies.trainer;
+    const trainer = trainerStore.getTrainerByEmail(trainerEmail);
+    let male = true;
+    if (trainer.gender == 'male') {
+      male = true;
+    } else {
+      male = false;
+    }
+    const viewData = {
+      trainer: trainer,
+      male: male
+    }
+    response.render("trainerprofile", viewData);
+  },
+
   updateMemberProfile(request, response) {
-    logger.info(`update member request.body: ${request.body.firstName}`);
     const newMemberDetails = request.body;
     const memberEmail = request.cookies.member;
     const member = memberStore.getMemberByEmail(memberEmail);
     memberStore.updateMember(newMemberDetails, member);
     response.cookie("member", member.email);
-    logger.info("Updating Member Details");
+    logger.info("Member Details Updated");
     response.redirect("/member-dashboard");
-  }
+  },
 
+  updateTrainerProfile(request, response) {
+    const newTrainerDetails = request.body;
+    const trainerEmail = request.cookies.trainer;
+    const trainer = trainerStore.getTrainerByEmail(trainerEmail);
+    trainerStore.updateTrainer(newTrainerDetails, trainer);
+    response.cookie("trainer", trainer.email);
+    logger.info("Trainer Details Updated");
+    response.redirect("trainer-dashboard");
+
+  }
 };
 
 module.exports = accounts;

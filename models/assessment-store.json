@@ -10,7 +10,7 @@
       "upperarm": "",
       "waist": "",
       "hip": "",
-      "trend": true
+      "trend": false
     },
     {
       "id": "6d558c32-68e2-4dc8-b514-525199fe0f2d",
@@ -34,7 +34,7 @@
       "upperarm": "",
       "waist": "",
       "hip": "",
-      "trend": true
+      "trend": false
     },
     {
       "id": "6b416de9-9783-42c7-9134-a9bd3145b80f",
@@ -46,7 +46,7 @@
       "upperarm": "",
       "waist": "",
       "hip": "",
-      "trend": false
+      "trend": true
     },
     {
       "id": "996b564b-e5fc-407f-af49-02433af5a868",
@@ -58,7 +58,7 @@
       "upperarm": "",
       "waist": "",
       "hip": "",
-      "trend": false
+      "trend": true
     },
     {
       "id": "5810c93d-ada8-45f7-9c8c-ddbef7b07a5c",

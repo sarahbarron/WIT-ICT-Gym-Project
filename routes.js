@@ -8,7 +8,7 @@ const dashboard = require("./controllers/dashboard.js");
 const about = require("./controllers/about.js");
 const home = require("./controllers/home.js");
 const assessment = require("./controllers/assessments.js")
-
+const trainerDashboard = require("./controllers/trainerdashboard.js");
 
 router.get("/", home.index);
 router.get("/login", accounts.login);
@@ -20,11 +20,16 @@ router.post("/authenticate", accounts.authenticate);
 router.get("/member-dashboard", dashboard.memberDashboard);
 router.get("/delete/assessment/:id", assessment.deleteAssessment);
 router.post("/addassessment", assessment.addAssessment);
-
-router.get("/trainer-dashboard", dashboard.trainerDashboard);
-router.get("/profile", accounts.profile);
-// router.post("/update-trainer-profile", accounts.updateTrainerProfile);
+router.get("/member-profile", accounts.profile);
 router.post("/update-members-profile", accounts.updateMemberProfile);
+
+router.get("/trainer-dashboard", trainerDashboard.index);
+router.get("/member/:id", trainerDashboard.getMemberDetails);
+router.get("/trainer-profile", accounts.trainerProfile);
+router.post("/update-trainers-profile", accounts.updateTrainerProfile);
+
+// router.post("/update-trainer-profile", accounts.updateTrainerProfile);
+
 router.get("/about", about.index);
 
 module.exports = router;
