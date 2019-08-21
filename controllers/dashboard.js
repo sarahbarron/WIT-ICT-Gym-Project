@@ -5,6 +5,7 @@ const logger = require("../utils/logger");
 const assessmentStore = require("../models/assessment-store");
 const gymUtility = require("../utils/gymUtilityCalculations");
 const memberStore = require("../models/member-store");
+const goalStore = require("../models/goal-store");
 
 
 const dashboard = {
@@ -25,15 +26,19 @@ const dashboard = {
       bmiCategoryColor = true;
     }
     const isIdealBodyWeight = gymUtility.isIdealBodyWeight(loggedInMember, latestAssessment);
+    const goals = goalStore.getMemberGoals(loggedInMember.id);
+
     const viewData = {
       title: "Member Dashboard",
+      member: loggedInMember,
       firstName: firstName,
       lastName: lastName,
       assessments: assessments,
       bmi: bmi,
       bmiCategory: bmiCategory,
       bmiCategoryColor: bmiCategoryColor,
-      isIdealBodyWeight: isIdealBodyWeight
+      isIdealBodyWeight: isIdealBodyWeight,
+      goals: goals
     };
     response.render("memberdashboard", viewData);
   }

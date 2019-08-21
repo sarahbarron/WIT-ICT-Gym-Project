@@ -9,6 +9,7 @@ const about = require("./controllers/about.js");
 const home = require("./controllers/home.js");
 const assessment = require("./controllers/assessments.js")
 const trainerDashboard = require("./controllers/trainerdashboard.js");
+const goals = require("./controllers/goal");
 
 router.get("/", home.index);
 router.get("/login", accounts.login);
@@ -30,7 +31,8 @@ router.get("/delete-member/:id", trainerDashboard.deleteMember);
 router.post("/update-trainers-profile", accounts.updateTrainerProfile);
 router.post("/member/:memberid/add-comment-assessment/:id", assessment.addComment);
 
-// router.post("/update-trainer-profile", accounts.updateTrainerProfile);
+router.post("/add-goal/:memberid", goals.addGoal);
+router.get("/member/:memberid/delete-goal/:id", goals.deleteGoal);
 
 router.get("/about", about.index);
 

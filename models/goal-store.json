@@ -1,0 +1,46 @@
+{
+  "goalCollection": [
+    {
+      "id": "cf18fbb3-9d30-4e61-af0c-e91ca3124ac0",
+      "date": "8/21/2019, 9:44:53 PM",
+      "weight": "10",
+      "chest": "10",
+      "thigh": "10",
+      "upperarm": "10",
+      "waist": "10",
+      "hip": "10",
+      "status": "OPEN"
+    },
+    {
+      "id": "e8c52671-8e7f-4ccb-9718-8621118bf593",
+      "date": "8/21/2019, 9:47:49 PM",
+      "weight": "20",
+      "chest": "20",
+      "thigh": "20",
+      "upperarm": "20",
+      "waist": "20",
+      "hip": "20",
+      "status": "OPEN"
+    },
+    {
+      "id": "770068bb-309b-4e17-96e5-40ad6791fd47",
+      "memberid": "ef928222-1c14-45b4-bef5-f6f73140ff03",
+      "date": "2019-08-31",
+      "weight": "20",
+      "chest": "20",
+      "thigh": "20",
+      "upperarm": "20",
+      "waist": "20",
+      "hip": "20",
+      "status": "OPEN"
+    },
+    {
+      "id": "2567aa79-73e7-462e-9fae-a3dcee59847b",
+      "memberid": "8e5e6d25-cee7-42ae-b75d-3836359b7fae",
+      "date": "2019-08-24",
+      "weight": "30",
+      "waist": "20",
+      "status": "OPEN"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+<section class="ui raised segment">
+    <h2>Add Goal</h2>
+    <form class="ui segment form" action="/add-goal/{{member.id}}" method="POST">
+        <div class="three fields">
+            <div class="field">
+                <label>Date to complete goal by</label>
+                <input type="date" name="date">
+            </div>
+            <div class="field">
+                <label>Weight</label>
+                <input placeholder="00.00kg" type="number" step="0.01" min="0" name="weight" required>
+            </div>
+            <div class="field">
+                <label>Waist</label>
+                <input placeholder="00.00cm" type="number" step="0.01" min="0" name="waist">
+            </div>
+        </div>
+        <button class="ui blue submit button">Add Goal</button>
+    </form>
+</section>

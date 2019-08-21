@@ -1,0 +1,30 @@
+<section class="ui raised segment">
+    <h2>GOALS</h2>
+    <table class="ui fixed table">
+        <thead>
+            <tr>
+                <th colspan="2">Date</th>
+                <th colspan="2">Weight</th>
+                <th colspan="2">Waist</th>
+                <th colspan="4">Status</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <div class="ui bulleted list">
+                {{#each goals}}
+                    <tr>
+                        <td colspan="2"> {{date}} </td>
+                        <td colspan="2"> {{weight}} </td>
+                        <td colspan="2"> {{waist}} </td>
+                        <td colspan="4">{{status}}</td>
+                        <td>
+                            <a href="/member/{{../member.id}}/delete-goal/{{id}}" class="ui icon button">
+                                <i class="icon trash"></i>
+                            </a>
+                        </td>
+                {{/each}}
+            </div>
+        </tbody>
+    </table>
+</section>
