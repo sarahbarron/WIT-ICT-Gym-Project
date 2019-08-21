@@ -3,7 +3,7 @@
 const accounts = require("./accounts.js");
 const logger = require("../utils/logger");
 const assessmentStore = require("../models/assessment-store");
-const gymUtility = require("../models/gymUtilityCalculations");
+const gymUtility = require("../utils/gymUtilityCalculations");
 const memberStore = require("../models/member-store");
 
 

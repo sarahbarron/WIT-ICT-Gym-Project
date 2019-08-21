@@ -4,7 +4,7 @@ const _ = require("lodash");
 const logger = require("../utils/logger");
 const memberStore = require("../models/member-store");
 const JsonStore = require("./json-store");
-const gymUtility = require("./gymUtilityCalculations");
+const gymUtility = require("../utils/gymUtilityCalculations");
 const assessmentStore = {
 
     store: new JsonStore("./models/assessment-store.json", {
