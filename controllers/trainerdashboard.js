@@ -39,6 +39,7 @@ const trainerdashboard = {
         }
         const isIdealBodyWeight = gymUtility.isIdealBodyWeight(member, latestAssessment);
         const goals = goalStore.getMemberGoals(memberid);
+        const currentGoal = goals[0];
         const viewData = {
             title: "Trainer Dashboard",
             member: member,
@@ -49,7 +50,8 @@ const trainerdashboard = {
             bmiCategory: bmiCategory,
             bmiCategoryColor: bmiCategoryColor,
             isIdealBodyWeight: isIdealBodyWeight,
-            goals: goals
+            goals: goals,
+            currentgoal: currentGoal
         };
         response.render("trainerviewmember", viewData);
     },

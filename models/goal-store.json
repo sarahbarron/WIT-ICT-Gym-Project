@@ -41,6 +41,14 @@
       "weight": "30",
       "waist": "20",
       "status": "OPEN"
+    },
+    {
+      "id": "b18f8cf9-e841-41ae-8398-5af96c505fbe",
+      "memberid": "ef928222-1c14-45b4-bef5-f6f73140ff03",
+      "date": "2019-09-06",
+      "weight": "50",
+      "waist": "50",
+      "status": "OPEN"
     }
   ]
 }

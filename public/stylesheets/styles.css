@@ -7,3 +7,13 @@
 p {
     font-size: 1.2em;
 }
+
+#bg-green {
+    background-color: greenyellow;
+}
+
+#current-goal-font {
+    font-weight: bolder;
+    font-size: 18px;
+    color: green;
+}
