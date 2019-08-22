@@ -1,6 +1,19 @@
 {
   "assessmentCollection": [
     {
+      "id": "c1087e97-79a9-4eef-97ea-f7ea9384930281",
+      "memberid": "ef928222-1c14-45b4-bef5-f6f73140ff03",
+      "date": "8/22/2019, 2:59:46 PM",
+      "weight": "35",
+      "chest": "80",
+      "thigh": "51",
+      "upperarm": "103",
+      "waist": "75",
+      "hip": "80",
+      "trend": true,
+      "comment": "great\r\n"
+    },
+    {
       "id": "bd9e2115-2bc7-4430-9404-5ff79b717977",
       "memberid": "fcd6967e-a7b7-40a6-8c0c-88d6cdc4240b",
       "date": "8/20/2019, 11:13:04 PM",
@@ -159,7 +172,7 @@
     {
       "id": "2a959cf5-ea14-476d-a5be-bffaa217ad63",
       "memberid": "ef928222-1c14-45b4-bef5-f6f73140ff03",
-      "date": "8/21/2019, 4:58:55 PM",
+      "date": "8/01/2019, 4:58:55 PM",
       "weight": "55",
       "chest": "100",
       "thigh": "60",
@@ -172,7 +185,7 @@
     {
       "id": "c1087e97-79a9-4eef-97ea-f7ea39559d5d",
       "memberid": "ef928222-1c14-45b4-bef5-f6f73140ff03",
-      "date": "8/21/2019, 4:59:46 PM",
+      "date": "8/15/2019, 4:59:46 PM",
       "weight": "45",
       "chest": "80",
       "thigh": "51",
@@ -229,6 +242,18 @@
       "waist": "",
       "hip": "",
       "trend": true
+    },
+    {
+      "id": "d42c374d-0a1e-4bcd-89ba-963ede94c3cb",
+      "memberid": "ef928222-1c14-45b4-bef5-f6f73140ff03",
+      "date": "8/22/2019, 4:21:23 PM",
+      "weight": "45",
+      "chest": "",
+      "thigh": "",
+      "upperarm": "",
+      "waist": "80",
+      "hip": "",
+      "trend": false
     }
   ]
 }

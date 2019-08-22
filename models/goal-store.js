@@ -1,10 +1,9 @@
 "use strict";
 
-const _ = require("lodash");
 const logger = require("../utils/logger");
-const memberStore = require("./member-store");
+const memberStore = require("../models/member-store");
 const JsonStore = require("./json-store");
-
+const goalUtility = require("../utils/goalUtility");
 const goalStore = {
 
     store: new JsonStore("./models/goal-store.json", {
@@ -44,6 +43,37 @@ const goalStore = {
         const goal = this.getGoal(id);
         this.store.remove(this.collection, goal);
         this.store.save();
+    },
+
+    goalStatus(goals, assessments) {
+
+        let i = 0;
+        let goalDate;
+        let lastAssessmentBeforeGoalDate;
+        let isPast;
+        let isAchieved;
+
+        for (i = 0; i < goals.length; i++) {
+            //convert the date string to a date of milliseconds  
+            goalDate = Date.parse(goals[i].date);
+            isPast = goalUtility.checkIfDateIsPastOrFuture(goalDate);
+            if (isPast) {
+                const memberid = goals[0].memberid;
+                const member = memberStore.getMemberById(memberid);
+                const startweight = member.startweight;
+                lastAssessmentBeforeGoalDate = goalUtility.findLastAssessmentPriorToGoalDate(goals[i], assessments, startweight);
+                isAchieved = goalUtility.checkIfGoalHasBeenAchieved(goals[i], lastAssessmentBeforeGoalDate);
+                if (isAchieved) {
+                    goals[i].status = "ACHIEVED";
+                } else {
+                    goals[i].status = "MISSED";
+                }
+            } else {
+                goals[i].status = "OPEN";
+            }
+            this.store.save();
+        }
+
     }
 };
 

@@ -33,7 +33,8 @@ const goal = {
         } else {
             response.redirect(`/member/${request.params.memberid}`);
         }
-    }
+    },
+
 };
 
 module.exports = goal;

@@ -40,6 +40,7 @@ const trainerdashboard = {
         const isIdealBodyWeight = gymUtility.isIdealBodyWeight(member, latestAssessment);
         const goals = goalStore.getMemberGoals(memberid);
         const currentGoal = goals[0];
+        goalStore.goalStatus(goals, assessments);
         const viewData = {
             title: "Trainer Dashboard",
             member: member,

@@ -43,12 +43,44 @@
       "status": "OPEN"
     },
     {
-      "id": "b18f8cf9-e841-41ae-8398-5af96c505fbe",
+      "id": "28a5e43f-56cb-427f-b42f-9c5d73d90306",
       "memberid": "ef928222-1c14-45b4-bef5-f6f73140ff03",
-      "date": "2019-09-06",
-      "weight": "50",
-      "waist": "50",
-      "status": "OPEN"
+      "date": "2019-08-01",
+      "weight": "80",
+      "waist": "80",
+      "status": "MISSED"
+    },
+    {
+      "id": "787ef798-f04c-4d91-9333-5f8b11ee7e3c",
+      "memberid": "ef928222-1c14-45b4-bef5-f6f73140ff03",
+      "date": "2019-08-21",
+      "weight": "45",
+      "waist": "80",
+      "status": "ACHIEVED"
+    },
+    {
+      "id": "0c4734b7-b070-4a84-9915-7cc5b5319224",
+      "memberid": "ef928222-1c14-45b4-bef5-f6f73140ff03",
+      "date": "2019-08-22",
+      "weight": "45",
+      "waist": "80",
+      "status": "ACHIEVED"
+    },
+    {
+      "id": "30f7a280-f822-48dd-88a9-ffb80232f4f8",
+      "memberid": "ef928222-1c14-45b4-bef5-f6f73140ff03",
+      "date": "2019-08-22",
+      "weight": "100",
+      "waist": "100",
+      "status": "ACHIEVED"
+    },
+    {
+      "id": "87d52a0f-2234-4aa7-a543-9f90953eb455",
+      "memberid": "ef928222-1c14-45b4-bef5-f6f73140ff03",
+      "date": "2019-07-31",
+      "weight": "100",
+      "waist": "100",
+      "status": "ACHIEVED"
     }
   ]
 }
