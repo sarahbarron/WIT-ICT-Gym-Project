@@ -4,7 +4,8 @@
 ### Course: HDip Computer Science
 ### Subject: ICT
 ### Project: final project - Gym App
-
+---
+#### Description
 This is a Gym App that allows:
 * Gym Members.
   * Sign up.
