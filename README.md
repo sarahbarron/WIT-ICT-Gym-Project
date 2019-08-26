@@ -1,8 +1,8 @@
 Welcome to the ICT Gym App
 =========================
 
-## College: Waterford Institute of Technology
-## Course: HDip Computer Science
+### College: Waterford Institute of Technology
+### Course: HDip Computer Science
 ### Subject: ICT
 #### Project: final project - Gym App
 
