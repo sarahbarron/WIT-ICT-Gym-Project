@@ -1,4 +1,8 @@
+{{!-- Partial shows a list of all members it also shows the number of 
+assessments a member has completed --}}
 <h1>Trainer {{trainer.firstName}} {{trainer.lastName}}</h1>
+{{!-- For every member create a segment and show the members name and 
+number of assessments --}}
 {{#each members}}
     <div class="ui raised segment">
         <div class="ui grid">
@@ -7,12 +11,15 @@
                     <i class=" huge icon github"></i>
                 </div>
                 <div class="column four wide">
+                    {{!-- first and last name --}}
                     <h2 class="ui header blue">
                         <a href="/member/{{id}}">{{firstName}} {{lastName}}</a>
                     </h2>
+                    {{!-- number of assessments --}}
                     <p> number of assesments: {{numberOfAssessments}} </p>
                 </div>
                 <div class="column">
+                    {{!-- Icon with a link to delete a member --}}
                     <a href="/delete-member/{{id}}" class="ui icon button">
                         <i class="red icon trash"></i>
                     </a>

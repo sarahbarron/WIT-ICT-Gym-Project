@@ -1,6 +1,13 @@
+{{!-- Partial to show a list of a members assessments. This shows
+the assessments in reverse chronological order, showing the 
+date of the assessment, weight, chest, thigh, upper arm, waist
+and hips measurements, trend arrow with green for a positive trend and 
+red for a negative trend, and trainers comments --}}
 <section class="ui raised segment">
     <h2>ASSESSMENTS</h2>
+    {{!-- List of assessments table --}}
     <table class="ui fixed table">
+        {{!-- Headings --}}
         <thead>
             <tr>
                 <th colspan="2">Date</th>
@@ -17,6 +24,7 @@
         </thead>
         <tbody>
             <div class="ui bulleted list">
+                {{!-- For each assessment list the following measurements, trend and comment --}}
                 {{#each assessments}}
                     <tr>
                         <td colspan="2"> {{date}} </td>
@@ -26,6 +34,8 @@
                         <td> {{upperarm}} </td>
                         <td> {{waist}} </td>
                         <td> {{hip}} </td>
+                        {{!-- if the trend is positive show the arrow as green 
+                        otherwise show it as red --}}
                         <td>
                             {{#if trend}}
                                 <i class="green ui tag label"></i>
@@ -34,12 +44,14 @@
                             {{/if}}
                         </td>
                         <td colspan="2">{{comment}}</td>
+                        {{!-- Button and link to delete a measurement --}}
                         <td>
                             <a href="/delete-assessment/{{id}}" class="ui icon button">
                                 <i class="icon trash"></i>
                             </a>
                         </td>
                 {{/each}}
+                {{!-- end the each loop --}}
             </div>
         </tbody>
     </table>

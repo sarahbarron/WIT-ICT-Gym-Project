@@ -1,86 +1,68 @@
 {
   "goalCollection": [
     {
-      "id": "cf18fbb3-9d30-4e61-af0c-e91ca3124ac0",
-      "date": "8/21/2019, 9:44:53 PM",
-      "weight": "10",
-      "chest": "10",
-      "thigh": "10",
-      "upperarm": "10",
-      "waist": "10",
-      "hip": "10",
-      "status": "OPEN"
-    },
-    {
-      "id": "e8c52671-8e7f-4ccb-9718-8621118bf593",
-      "date": "8/21/2019, 9:47:49 PM",
-      "weight": "20",
-      "chest": "20",
-      "thigh": "20",
-      "upperarm": "20",
-      "waist": "20",
-      "hip": "20",
-      "status": "OPEN"
-    },
-    {
-      "id": "770068bb-309b-4e17-96e5-40ad6791fd47",
+      "id": "249bc711-f70a-48fb-9ecf-2c4cbe4a55db",
       "memberid": "ef928222-1c14-45b4-bef5-f6f73140ff03",
-      "date": "2019-08-31",
-      "weight": "20",
-      "chest": "20",
-      "thigh": "20",
-      "upperarm": "20",
-      "waist": "20",
-      "hip": "20",
+      "date": "2019-09-30",
+      "weight": "118",
+      "waist": "30",
       "status": "OPEN"
     },
     {
-      "id": "2567aa79-73e7-462e-9fae-a3dcee59847b",
-      "memberid": "8e5e6d25-cee7-42ae-b75d-3836359b7fae",
-      "date": "2019-08-24",
-      "weight": "30",
-      "waist": "20",
-      "status": "OPEN"
-    },
-    {
-      "id": "28a5e43f-56cb-427f-b42f-9c5d73d90306",
+      "id": "fcb0d747-de40-409d-9153-0b97992cae16",
       "memberid": "ef928222-1c14-45b4-bef5-f6f73140ff03",
-      "date": "2019-08-01",
-      "weight": "80",
-      "waist": "80",
+      "date": "2018-03-09",
+      "weight": "100",
+      "waist": "30",
       "status": "MISSED"
     },
     {
-      "id": "787ef798-f04c-4d91-9333-5f8b11ee7e3c",
+      "id": "9b38bc9b-a46e-46bf-8089-8c91b7234840",
       "memberid": "ef928222-1c14-45b4-bef5-f6f73140ff03",
-      "date": "2019-08-21",
-      "weight": "45",
-      "waist": "80",
+      "date": "2018-03-20",
+      "weight": "124",
+      "waist": "32",
       "status": "ACHIEVED"
     },
     {
-      "id": "0c4734b7-b070-4a84-9915-7cc5b5319224",
-      "memberid": "ef928222-1c14-45b4-bef5-f6f73140ff03",
-      "date": "2019-08-22",
-      "weight": "45",
-      "waist": "80",
+      "id": "60f4a208-ca4d-4a90-ac34-957927ab36d2",
+      "memberid": "6c9b6401-92b4-4c2b-8b01-8f463804ca71",
+      "date": "2019-05-27",
+      "weight": "60",
+      "waist": "32",
       "status": "ACHIEVED"
     },
     {
-      "id": "30f7a280-f822-48dd-88a9-ffb80232f4f8",
-      "memberid": "ef928222-1c14-45b4-bef5-f6f73140ff03",
-      "date": "2019-08-22",
-      "weight": "100",
-      "waist": "100",
-      "status": "ACHIEVED"
+      "id": "9c1b8ba1-15f4-4322-bdeb-e40a16052d20",
+      "memberid": "6c9b6401-92b4-4c2b-8b01-8f463804ca71",
+      "date": "2019-06-30",
+      "weight": "58",
+      "waist": "30",
+      "status": "MISSED"
     },
     {
-      "id": "87d52a0f-2234-4aa7-a543-9f90953eb455",
-      "memberid": "ef928222-1c14-45b4-bef5-f6f73140ff03",
+      "id": "da8fe403-fa9f-4c2e-871f-8bfa6755673a",
+      "memberid": "6c9b6401-92b4-4c2b-8b01-8f463804ca71",
       "date": "2019-07-31",
-      "weight": "100",
-      "waist": "100",
+      "weight": "60",
+      "waist": "32",
       "status": "ACHIEVED"
+    },
+    {
+      "id": "d508a81b-a33c-4208-b681-8420c5a44b23",
+      "memberid": "6c9b6401-92b4-4c2b-8b01-8f463804ca71",
+      "date": "2019-08-31",
+      "weight": "58",
+      "waist": "31",
+      "status": "OPEN"
+    },
+    {
+      "id": "f797ee8d-0026-4592-a728-0b266a00ef7c",
+      "memberid": "6c9b6401-92b4-4c2b-8b01-8f463804ca71",
+      "date": "2019-09-30",
+      "weight": "56",
+      "waist": "30",
+      "status": "OPEN"
     }
   ]
 }

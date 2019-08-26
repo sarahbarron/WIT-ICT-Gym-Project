@@ -2,7 +2,7 @@
   "trainers": [
     {
       "id": "123456789",
-      "firstName": "Marge",
+      "firstName": "marge",
       "lastName": "Simpson",
       "email": "marge@simpson.com",
       "password": "secret",

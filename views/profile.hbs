@@ -1,32 +1,43 @@
+{{!-- Members profile - this page shows a form with the members details, a member can use the form to 
+input new details and update them --}}
 {{> menu id="profile"}}
 <div class="ui two column grid basic middle aligned segment">
     <div class="column">
+        {{!-- update profile form --}}
         <form class="ui stacked segment form" action="/update-members-profile" method="POST">
             <h3 class="ui header">Update Profile</h3>
             <div class="two fields">
+                {{!-- first name --}}
                 <div class="field">
                     <label>First Name</label>
                     <input placeholder={{member.firstName}} type="text" name="firstName">
                 </div>
+                {{!-- last name --}}
                 <div class="field">
                     <label>Last Name</label>
                     <input placeholder={{member.lastName}} type="text" name="lastName">
                 </div>
             </div>
+            {{!-- email --}}
             <div class="field">
                 <label>Email</label>
                 <input placeholder={{member.email}} type="text" name="email">
             </div>
+            {{!-- password --}}
             <div class="field">
                 <label>Password</label>
                 <input placeholder="..........." type="password" name="password">
             </div>
+            {{!-- address --}}
             <div class="field">
                 <label>Address</label>
                 <input placeholder={{member.address}} type="text" name="address">
             </div>
+            {{!-- gender --}}
             <div class="field">
                 <label>Gender</label>
+                {{!-- if the member is male check the male radio button otherwise check the 
+                female radio button --}}
                 {{#if male}}
                     <input type="radio" name="gender" value="male" checked>Male
                     <input type="radio" name="gender" value="female"> Female
@@ -36,18 +47,22 @@
                 {{/if}}
             </div>
             <div class="two fields">
+                {{!-- height --}}
                 <div class="field">
                     <label>Height</label>
                     <input placeholder={{member.height}} type="number" step="0.01" min="0" name="height">
                 </div>
+                {{!-- start weight --}}
                 <div class="field">
                     <label>Starting Weight</label>
                     <input placeholder={{member.startweight}} type="number" step="0.01" min="0" name="startweight">
                 </div>
             </div>
+            {{!-- button to submit the members profile updates --}}
             <button class="ui blue submit button">Submit</button>
         </form>
     </div>
+    {{!-- sports image --}}
     <div class="column">
         <img src="images/sport_icons.jpg" alt="sports icon for BMI tracker" class="ui image">
     </div>

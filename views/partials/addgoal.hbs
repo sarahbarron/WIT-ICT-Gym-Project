@@ -1,20 +1,28 @@
+{{!-- Partial to add a goal. Members and Trainers can add a goal to a members account.
+A goal consists of a date the goal is to be completed by, a weight goal and a waist goal. 
+The member or trainer inputs these details into the form and submit them --}}
 <section class="ui raised segment">
     <h2>Add Goal</h2>
+    {{!-- form to add a goal using the members id --}}
     <form class="ui segment form" action="/add-goal/{{member.id}}" method="POST">
         <div class="three fields">
+            {{!-- Date field --}}
             <div class="field">
                 <label>Date to complete goal by</label>
                 <input type="date" name="date">
             </div>
+            {{!-- weight measurement --}}
             <div class="field">
                 <label>Weight</label>
                 <input placeholder="00.00kg" type="number" step="0.01" min="0" name="weight" required>
             </div>
+            {{!-- waist measurement --}}
             <div class="field">
                 <label>Waist</label>
-                <input placeholder="00.00cm" type="number" step="0.01" min="0" name="waist">
+                <input placeholder="00.00cm" type="number" step="0.01" min="0" name="waist" required>
             </div>
         </div>
+        {{!-- button to submit the goal --}}
         <button class="ui blue submit button">Add Goal</button>
     </form>
 </section>

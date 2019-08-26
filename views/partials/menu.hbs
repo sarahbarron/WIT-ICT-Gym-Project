@@ -1,10 +1,13 @@
+{{!-- Partial for the main navigation menu when a member is logged in --}}
 <nav class="ui menu">
   <header class="ui header item"> <a href="/"> Gym App </a></header>
   <div class="right menu">
+    {{!-- link to the members dashboard --}}
     <a id="dashboard" class="item" href="/member-dashboard"> Dashboard </a>
-    <a id="about" class="item" href="/about"> About </a>
+    {{!-- link to the members profile page --}}
     <a id="profile" class="item ui icon" href="/member-profile">
       <i class="icon user"></i></a>
+    {{!-- link to logout --}}
     <a id="logout" class="item" href="/logout"> Logout </a>
   </div>
 </nav>

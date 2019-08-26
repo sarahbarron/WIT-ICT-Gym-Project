@@ -1,26 +1,34 @@
+{{!-- Trainers profile - this page shows a form with the trainers details, a trainer can use the form to 
+input new details and update them --}}
 {{> trainermenu id="profile"}}
 <div class="ui two column grid basic middle aligned segment">
     <div class="column">
+        {{!-- Trainer profile form --}}
         <form class="ui stacked segment form" action="/update-trainers-profile" method="POST">
             <h3 class="ui header">Update Profile</h3>
             <div class="two fields">
+                {{!-- first name --}}
                 <div class="field">
                     <label>First Name</label>
                     <input placeholder={{trainer.firstName}} type="text" name="firstName">
                 </div>
+                {{!-- last name --}}
                 <div class="field">
                     <label>Last Name</label>
                     <input placeholder={{trainer.lastName}} type="text" name="lastName">
                 </div>
             </div>
+            {{!-- email --}}
             <div class="field">
                 <label>Email</label>
                 <input placeholder={{trainer.email}} type="text" name="email">
             </div>
+            {{!-- password --}}
             <div class="field">
                 <label>Password</label>
                 <input placeholder="..........." type="password" name="password">
             </div>
+            {{!-- gender --}}
             <div class="field">
                 <label>Gender</label>
                 {{#if male}}
@@ -31,9 +39,11 @@
                     <input type="radio" name="gender" value="female" checked> Female
                 {{/if}}
             </div>
+            {{!-- button to submit the form --}}
             <button class="ui blue submit button">Submit</button>
         </form>
     </div>
+    {{!-- sports image --}}
     <div class="column">
         <img src="images/sport_icons.jpg" alt="sports icon for BMI tracker" class="ui image">
     </div>

@@ -1,12 +1,17 @@
+{{!-- Partial for the navigation menu when a trainer is logged in --}}
 <nav class="ui menu">
     <header class="ui header item"> <a href="/"> Gym App </a></header>
     <div class="right menu">
+        {{!-- link to trainers dashboard --}}
         <a id="dashboard" class="item" href="/trainer-dashboard"> Dashboard </a>
+        {{!-- link to trainers profile --}}
         <a id="profile" class="item ui icon" href="/trainer-profile">
             <i class="icon user"></i></a>
+        {{!-- link to logout --}}
         <a id="logout" class="item" href="/logout"> Logout </a>
     </div>
 </nav>
+{{!-- script to set the active item in the navigation bar --}}
 <script>
     $("#{{id}}").addClass("active item");
 </script>

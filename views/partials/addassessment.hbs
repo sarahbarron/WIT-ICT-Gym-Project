@@ -1,34 +1,46 @@
+{{!-- Partial to add an assessment. This can be accessed when a member is logged in
+Member can use this form to add an assessment to their account. 
+An assessment consists of a weight (required) and can also contain a chest, thigh, upperarm
+waist and hip measurement  --}}
 <section class="ui raised segment">
     <h2>ADD ASSESSMENT</h2>
+    {{!-- Form to input an assessment --}}
     <form class="ui segment form" action="/add-assessment" method="POST">
         <div class="three fields">
+            {{!-- weight measurement --}}
             <div class="field">
                 <label>Weight</label>
                 <input placeholder="00.00kg" type="number" step="0.01" min="0" name="weight" required>
             </div>
+            {{!-- chest measurement --}}
             <div class="field">
                 <label>Chest</label>
                 <input placeholder="00.00cm" type="number" step="0.01" min="0" name="chest">
             </div>
+            {{!-- thigh measurement --}}
             <div class="field">
                 <label>Thigh</label>
                 <input placeholder="00.00cm" type="number" step="0.01" min="0" name="thigh">
             </div>
         </div>
         <div class="three fields">
+            {{!-- Upper arm measurement --}}
             <div class="field">
                 <label>Upper Arm</label>
                 <input placeholder="00.00cm" type="number" step="0.01" min="0" name="upperarm">
             </div>
+            {{!-- waist measurement --}}
             <div class="field">
                 <label>Waist</label>
                 <input placeholder="00.00cm" type="number" step="0.01" min="0" name="waist">
             </div>
+            {{!-- hips measurement --}}
             <div class="field">
                 <label>Hips</label>
                 <input placeholder="00.00cm" type="number" step="0.01" min="0" name="hip">
             </div>
         </div>
+        {{!-- button to submit the assessment --}}
         <button class="ui blue submit button">Add Assessment</button>
     </form>
 </section>

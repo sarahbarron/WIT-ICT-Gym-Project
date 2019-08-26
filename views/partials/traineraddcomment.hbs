@@ -1,7 +1,11 @@
+{{!-- Partial for a trainer to add a comment to a members assessment.
+Each assessment has a form input area for a trainer to add their comment --}}
 <section class="ui raised segment">
     <h2>Member Assessments</h2>
+    {{!-- for each assessment create a table showing members assessment details --}}
     {{#each assessments}}
         <table class="ui fixed table">
+            {{!-- table headings --}}
             <thead>
                 <tr>
                     <th colspan="2">Date</th>
@@ -15,6 +19,7 @@
                     <th colspan="2">Comment</th>
                 </tr>
             </thead>
+            {{!-- Assessment details --}}
             <tbody>
                 <div class="ui bulleted list">
                     <tr>
@@ -25,6 +30,8 @@
                         <td> {{upperarm}}</td>
                         <td> {{waist}} </td>
                         <td> {{hip}} </td>
+                        {{!-- trend label icon will show green if it is
+                        a positive result otherwise it will show red --}}
                         <td>
                             {{#if trend}}
                                 <i class="green ui tag label"></i>
@@ -36,12 +43,14 @@
                     </tr>
                     <tr>
                         <td colspan="11">
+                            {{!-- Form for member to add a comment --}}
                             <form class="ui raised segment form"
                                 action="/member/{{../member.id}}/add-comment-assessment/{{id}}" method="POST">
                                 <div class="field">
                                     <label>Comment</label>
                                     <textarea rows="2" cols="50" name="comment"></textarea>
                                 </div>
+                                {{!-- button to submit the comment --}}
                                 <button class="ui blue submit button">Update</button>
                             </form>
                         </td>
@@ -50,5 +59,6 @@
             </tbody>
         </table>
     {{/each}}
+    {{!-- end the loop --}}
     </div>
 </section>

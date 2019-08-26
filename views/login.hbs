@@ -1,11 +1,15 @@
+{{!-- Login page - form to submit a members email address and password --}}
 {{> welcomemenu id='login' }}
 <form class="ui stacked segment form" action="/authenticate" method="POST">
   <h3 class="ui header">Log-in</h3>
+  {{!-- email address --}}
   <div class="field">
     <label>Email</label> <input placeholder="Email" name="email">
   </div>
+  {{!-- password --}}
   <div class="field">
     <label>Password</label> <input type="password" name="password">
   </div>
+  {{!-- button to submit the login in input --}}
   <button class="ui blue submit button">Login</button>
 </form>

@@ -1,40 +1,40 @@
 {
   "members": [
     {
-      "firstName": "homer",
-      "lastName": "simpson",
+      "firstName": "Homer",
+      "lastName": "Simpson",
       "email": "homer@simpson.com",
       "password": "secret",
       "address": "Simpson Row",
       "gender": "male",
-      "height": "1.3",
-      "startweight": "60",
+      "height": "1.7",
+      "startweight": "101",
       "id": "ef928222-1c14-45b4-bef5-f6f73140ff03",
       "numberOfAssessments": 3
-    },
-    {
-      "firstName": "Lisa",
-      "lastName": "Simpson",
-      "email": "lisa@simpson.com",
-      "password": "secret",
-      "address": "Simpson Ros",
-      "gender": "female",
-      "height": "1.2",
-      "startweight": "40",
-      "id": "8e5e6d25-cee7-42ae-b75d-3836359b7fae",
-      "numberOfAssessments": 2
     },
     {
       "firstName": "bart",
       "lastName": "simpson",
       "email": "bart@simpson.com",
       "password": "secret",
+      "address": "Simpson Row",
+      "gender": "male",
+      "height": "1.2",
+      "startweight": "67",
+      "id": "6c9b6401-92b4-4c2b-8b01-8f463804ca71",
+      "numberOfAssessments": 4
+    },
+    {
+      "firstName": "lisa",
+      "lastName": "simpson",
+      "email": "lisa@simpson.com",
+      "password": "secret",
       "address": "simpson row",
       "gender": "male",
-      "height": "1.5",
-      "startweight": "50",
-      "id": "5e1e13eb-d450-4e56-a834-8e8cf3f01b9f",
-      "numberOfAssessments": 2
+      "height": "1.1",
+      "startweight": "38",
+      "id": "b2f9842c-d0ca-4e91-9d97-3c003db8d9da",
+      "numberOfAssessments": 0
     }
   ]
 }

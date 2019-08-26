@@ -1,15 +1,28 @@
+/* Controller for the members dashboard where the member can view
+Their analytics, latest goal status, assessments, trends and goals.
+The member can also add a goal, add an assessment, delete an
+assessment and delete a goal
+*/
+
+// Code should be executed in strict mode
 "use strict";
 
+// requirements
 const accounts = require("./accounts.js");
 const logger = require("../utils/logger");
 const assessmentStore = require("../models/assessment-store");
-const gymUtility = require("../utils/gymUtilityCalculations");
-const memberStore = require("../models/member-store");
+const gymUtility = require("./gymUtilityCalculations");
 const goalStore = require("../models/goal-store");
 
 
 const dashboard = {
 
+  /* 
+  Controller for member dashboard, data sent in the response to the browser dashboard page
+  are title, the logged in member, first name and last name in upper case, members assessments,
+  members bmi rate, category, and true or false for if member is at an ideal weight or not,
+  members goals, and members current goal.
+  */
   memberDashboard(request, response) {
 
     logger.info("member dashboard rendering");
@@ -47,4 +60,5 @@ const dashboard = {
 
 };
 
+// export dashboard 
 module.exports = dashboard;

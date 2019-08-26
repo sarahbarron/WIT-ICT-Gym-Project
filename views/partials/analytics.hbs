@@ -1,8 +1,14 @@
+{{!-- Partial for a members analytics, this shows a members Name, BMI,
+BMI Category, If a member is of an ideal body weight --}}
 <div class="ui 16 column middle aligned grid raised segment ">
+    {{!-- Top row --}}
     <div class="row">
+        {{!-- User icon --}}
         <div class="column four wide center aligned">
             <i class="huge user icon"></i>
         </div>
+        {{!-- Tachometer shows green if member is of ideal body weight 
+        or red if the member is not of ideal body weight --}}
         <div class="column four wide center aligned">
             {{#if isIdealBodyWeight}}
                 <i class="huge green tachometer alternate icon"></i>
@@ -10,12 +16,16 @@
                 <i class="huge red tachometer alternate icon"></i>
             {{/if}}
         </div>
+        {{!-- BMI heart Icon --}}
         <div class="column two wide right aligned">
             <i class="huge heartbeat icon"></i>
         </div>
+        {{!-- BMI measurement  --}}
         <div class="column two wide left aligned">
             <h3 class="bmi">{{bmi}}</h3>
         </div>
+        {{!-- BMI Category icon shows green if the member is in the normal
+        category otherwise it shows as red --}}
         <div class="column four wide center aligned">
             {{#if bmiCategoryColor}}
                 <i class="huge green user md icon"></i>
@@ -24,17 +34,22 @@
             {{/if}}
         </div>
     </div>
+    {{!-- Second row --}}
     <div class="row">
+        {{!-- Members first name and last name --}}
         <div class="column four wide center aligned">
             <h3 class="ui header">{{firstName}} {{lastName}}</h3>
         </div>
+        {{!-- Ideal weight indicator text --}}
         <div class="column four wide center aligned">
             <h3 class="ui header">IDEAL WEIGHT INDICATOR</h3>
         </div>
         <div class="column two wide right aligned"></div>
+        {{!-- BMI text --}}
         <div class="column two wide left aligned">
             <h3 class="ui header">BMI</h3>
         </div>
+        {{!-- BMI category  --}}
         <div class="column four wide center aligned">
             <h3 class="ui header">{{bmiCategory}}</h3>
         </div>
