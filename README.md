@@ -1,13 +1,28 @@
-Welcome to the ICT Gym App
-===========================================================================================================================================
+# Welcome to the ICT Gym App
 
 ### College: Waterford Institute of Technology
 ### Course: HDip Computer Science
 ### Subject: ICT
 ### Project: final project - Gym App
 
-This is a Gym App that allows gym members sign up, login and view their analytics (BMI, BMI Category & Ideal Weight Indicator), Assessments (weight, waist, chest, thigh, upper arms and hip measurements), Goals (weight and waist measurement goals and status if the goal was achieved, missed or still open). A member can add and delete assessments and goals.
-The Gym App also allows trainers login and view all the members and members details. The trainer can add and delete goals, add comments to assessments and delete members.
+This is a Gym App that allows:
+* Gym Members.
+  * Sign up.
+  * Login.
+  * View their analytics (BMI, BMI Category & Ideal Weight Indicator).
+  * View Assessments (weight, waist, chest, thigh, upper arms and hip measurements).
+  * View Goals (weight and waist measurement goals and status if the goal was achieved, missed or still open). 
+  * Add and delete assessments.
+  * Add and delete goals.
+  * View and update their profile.
+
+* Gym Trainers
+  * login.
+  * View all the members and members details.
+  * Add and delete goals.
+  * Add comments to assessments.
+  * Delete members.
+  * View and update their profile.
 
 #### I used the following technologies:
 * HTML
