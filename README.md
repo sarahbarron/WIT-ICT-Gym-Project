@@ -2,9 +2,11 @@
 
 ### College: Waterford Institute of Technology
 ### Course: HDip Computer Science
-### Subject: ICT
-### Project: final project - Gym App
----
+### Module: ICT
+### Project: final project - Gym App 
+#### Result: 94%
+#### Website: [https://sarahbarron-wit-ict-gym-project.glitch.me/](https://sarahbarron-wit-ict-gym-project.glitch.me/)
+-----------
 #### Description
 This is a Gym App that allows:
 * Gym Members.
